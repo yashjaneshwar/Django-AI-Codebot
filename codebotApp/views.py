@@ -31,6 +31,10 @@ def home(request):
                     frequency_penalty = 0.0,
                     presence_penalty = 0.0
                 )
+
+                # Parse the response
+                response = (response['choices'][0]['text']).strip()
+
                 return render(request, 'home.html', {'lang_list': lang_list, 'response': response, 'lang': lang})
 
 
