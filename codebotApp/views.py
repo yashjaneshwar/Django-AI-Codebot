@@ -15,7 +15,7 @@ def home(request):
         else:
 
             # OpenAI Key
-            openai.api_key = "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"
+            openai.api_key = "Your API key"
 
             # Create OpenAI Instance
             openai.Model.list()
@@ -37,13 +37,8 @@ def home(request):
 
                 return render(request, 'home.html', {'lang_list': lang_list, 'response': response, 'lang': lang})
 
-
-
             except Exception as e:
-
                 return render(request, 'home.html', {'lang_list': lang_list, 'response': e, 'lang': lang})
-
-
 
     return render(request, 'home.html', {'lang_list': lang_list})
 
@@ -61,7 +56,7 @@ def suggest(request):
         else:
 
             # OpenAI Key
-            openai.api_key = "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"
+            openai.api_key = "Your API key"
 
             # Create OpenAI Instance
             openai.Model.list()
@@ -83,12 +78,7 @@ def suggest(request):
 
                 return render(request, 'suggest.html', {'lang_list': lang_list, 'response': response, 'lang': lang})
 
-
-
             except Exception as e:
-
                 return render(request, 'suggest.html', {'lang_list': lang_list, 'response': e, 'lang': lang})
-
-
 
     return render(request, 'suggest.html', {'lang_list': lang_list})
